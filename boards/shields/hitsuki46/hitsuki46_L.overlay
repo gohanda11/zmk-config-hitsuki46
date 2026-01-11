@@ -1,8 +1,13 @@
 #include "hitsuki46.dtsi"
+#include <input/processors.dtsi>
 
-// Disable trackball_listener on left side (trackball is only on right side)
+// Enable and configure trackball_listener for left side (scroll only)
 &trackball_listener {
-    status = "disabled";
+    status = "okay";
+    device = <&trackball_left>;
+
+    // Left trackball: always in scroll mode (no auto-mouse layer)
+    input-processors = <&zip_xy_to_scroll_mapper>;
 };
 
 &kscan0 {
@@ -16,8 +21,25 @@
             ;
 };
 
-// Pin control for SPI1 (WS2812 LED)
+// Pin control for SPI0 (Trackball) and SPI1 (WS2812 LED)
 &pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            low-power-enable;
+        };
+    };
+
     spi1_default: spi1_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
@@ -41,5 +63,37 @@
     status = "okay";
     chain-length = <1>;
     // Pre-set WS2812 to blue color (0x0000FF)
+};
+
+&xiao_serial { status = "disabled"; };
+
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+
+    trackball_left: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610-alt";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        evt-type = <2>;  // INPUT_EV_REL - relative movement events
+        x-input-code = <0>;  // INPUT_REL_X
+        y-input-code = <1>;  // INPUT_REL_Y
+
+        // CPI setting (200-3200, step 200, default 600)
+        cpi = <400>;
+
+        // 180 degree orientation (invert both X and Y)
+        invert-x;
+        invert-y;
+
+        // Power management (recommended by README)
+        force-awake;
+    };
 };
 
