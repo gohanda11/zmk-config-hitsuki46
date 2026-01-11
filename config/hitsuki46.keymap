@@ -73,7 +73,7 @@
 &kp ESCAPE      &kp Q         &kp W         &kp E         &kp R        &kp T             &kp Y             &kp U        &kp I  &kp O      &kp P          &kp BACKSPACE
 &mt LCTRL TAB   &kp A         &kp S         &kp D         &kp F        &kp G             &kp H             &kp J        &kp K  &kp L      &lt 5 MINUS    &kp EQUAL
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V        &kp B             &kp SQT           &kp N        &kp M  &kp COMMA  &kp DOT        &kp SLASH
-                &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 DELETE  &lt 3 SPACE  &lt 2 LANGUAGE_2  &lt 3 LANGUAGE_1  &lt 2 ENTER  &trans         &trans         &kp SEMICOLON
+                &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 DELETE  &lt 3 SPACE  &lt 2 LANGUAGE_2  &lt 3 LANGUAGE_1  &lt 2 ENTER  &kp RIGHT_SHIFT  &kp RIGHT_CTRL  &kp SEMICOLON
             >;
         };
 
