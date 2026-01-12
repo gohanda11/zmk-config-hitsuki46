@@ -94,15 +94,9 @@
                 ;
     };
 
-    // Virtual input device for receiving trackball data from peripheral (left) side
-    trackball_left_split: virtual_input {
-        compatible = "zmk,virtual-input";
-    };
-
     trackball_left_listener: trackball_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&trackball_left_split>;
     };
 
     trackball_right_listener: trackball_right_listener {

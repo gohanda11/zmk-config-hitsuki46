@@ -2,11 +2,19 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 
-// Disable trackball_left_listener on peripheral (left) side
-// The trackball data will be automatically sent to central (right) side
-// and processed there by the listener
+// Enable trackball_left_listener on peripheral (left) side
+// Process trackball events into scroll events locally on the peripheral
+// These scroll events will then be forwarded to central automatically
 &trackball_left_listener {
-    status = "disabled";
+    status = "okay";
+    device = <&trackball_left>;
+
+    // Left trackball: always in scroll mode
+    input-processors =
+        <&zip_x_scaler 0 1>,
+        <&zip_y_scaler 1 15>,
+        <&zip_xy_to_scroll_mapper>,
+        <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
 
 &kscan0 {
@@ -74,10 +82,11 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    trackball_left: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
+        label = "TRACKBALL_LEFT";
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         evt-type = <2>;  // INPUT_EV_REL - relative movement events
