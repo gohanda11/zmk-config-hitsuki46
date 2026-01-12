@@ -24,6 +24,7 @@
 // Enable trackball_left_listener on central side to process scroll events
 &trackball_left_listener {
     status = "okay";
+    device = <&trackball_left_split>;
 
     // Left trackball (from peripheral): always in scroll mode
     input-processors =
