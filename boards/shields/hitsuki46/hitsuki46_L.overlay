@@ -96,3 +96,7 @@
     };
 };
 
+
+&split_inputs {
+    status = "disabled";
+};

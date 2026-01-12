@@ -97,7 +97,7 @@
     };
 
     // Split input device for forwarding left trackball data from peripheral to central
-    split_inputs {
+    split_inputs: split_inputs {
         compatible = "zmk,split-inputs";
         #address-cells = <1>;
         #size-cells = <0>;
