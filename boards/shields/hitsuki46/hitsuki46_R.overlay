@@ -29,11 +29,11 @@
         device = <&trackball_left_split>;
 
         // Left trackball (from peripheral): always in scroll mode
+        // Both X and Y axes are enabled for horizontal and vertical scrolling
         input-processors =
-            <&zip_x_scaler 0 1>,
+            <&zip_x_scaler 0 15>,
             <&zip_y_scaler 1 15>,
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+            <&zip_xy_to_scroll_mapper>;
     };
 };
 
@@ -116,8 +116,7 @@
         // CPI setting (200-3200, step 200, default 600)
         cpi = <400>;
 
-        // 180 degree orientation (invert both X and Y)
-        invert-x;
+        // Invert Y axis only (X axis is correct without inversion)
         invert-y;
 
         // Power management (recommended by README)
