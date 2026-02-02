@@ -70,10 +70,10 @@
 
         default {
             bindings = <
-&kp ESCAPE      &kp Q         &kp W         &kp E               &kp R        &kp T             &kp Y             &kp U        &kp I                 &kp O          &kp P        &kp BACKSPACE
-&mt LCTRL TAB   &kp A         &kp S         &mt LEFT_COMMAND D  &kp F        &kp G             &kp H             &kp J        &kp K                 &kp L          &lt 5 MINUS  &kp EQUAL
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C               &kp V        &kp B             &kp N             &kp M        &kp COMMA             &kp PERIOD     &kp SLASH    &kp RSHFT
-                &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 DELETE        &lt 3 SPACE  &lt 2 LANGUAGE_2  &lt 3 LANGUAGE_1  &lt 2 ENTER  &mt RSHIFT BACKSPACE  &kp SEMICOLON  &kp SQT
+&trans  &kp Q         &kp W   &kp E               &kp R        &kp T   &kp Y          &kp U        &kp I        &kp O            &kp P            &trans
+&trans  &kp A         &kp S   &mt LEFT_COMMAND D  &kp F        &kp G   &kp H          &lt 2 J      &mt RCMD K   &mt RIGHT_ALT L  &mt RCTRL MINUS  &trans
+&trans  &kp Z         &kp X   &kp C               &kp V        &kp B   &kp N          &kp M        &lt 5 COMMA  &kp PERIOD       &kp SLASH        &trans
+        &lt 5 ESCAPE  &trans  &trans              &lt 3 SPACE  &trans  &kp BACKSPACE  &lt 2 ENTER  &trans       &trans           &trans
             >;
         };
 
@@ -124,10 +124,10 @@
 
         Bluetooth {
             bindings = <
-&trans  &trans        &trans        &trans        &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans
-&trans  &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans        &trans        &trans          &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans  &bootloader   &trans        &trans        &trans        &trans          &bt BT_CLR
-        &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans          &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &bootloader   &trans          &trans        &trans        &trans        &trans
+        &trans  &trans  &trans  &trans  &trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans
             >;
         };
     };
