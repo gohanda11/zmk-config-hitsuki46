@@ -89,7 +89,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &mkp MB1  &kp LG(P)  &mkp MB2  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &mkp MB1  &kp LG(V)  &mkp MB2  &trans  &trans  &trans
             >;
         };
 
