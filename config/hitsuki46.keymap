@@ -56,7 +56,8 @@
         sleep: sleep {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_WIN &kp Q>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_WIN>, <&macro_press>, <&kp Q>;
+
             label = "SLEEP";
         };
     };
