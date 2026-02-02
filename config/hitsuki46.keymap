@@ -70,10 +70,10 @@
 
         default {
             bindings = <
-&trans  &kp Q         &kp W   &kp E               &kp R        &kp T   &kp Y          &kp U        &kp I        &kp O            &kp P            &trans
-&trans  &kp A         &kp S   &mt LEFT_COMMAND D  &kp F        &kp G   &kp H          &lt 2 J      &mt RCMD K   &mt RIGHT_ALT L  &mt RCTRL MINUS  &trans
-&trans  &kp Z         &kp X   &kp C               &kp V        &kp B   &kp N          &kp M        &lt 5 COMMA  &kp PERIOD       &kp SLASH        &trans
-        &lt 5 ESCAPE  &trans  &trans              &lt 3 SPACE  &trans  &kp BACKSPACE  &lt 2 ENTER  &trans       &trans           &trans
+&trans  &kp Q               &kp W           &kp E               &kp R        &kp T     &kp Y          &kp U        &kp I        &kp O            &kp P                  &trans
+&trans  &mt LEFT_CONTROL A  &mt LEFT_ALT S  &mt LEFT_COMMAND D  &lt 3 F      &kp G     &kp H          &lt 3 J      &mt RCMD K   &mt RIGHT_ALT L  &mt RCTRL MINUS        &trans
+&trans  &mt LEFT_SHIFT Z    &kp X           &kp C               &kp V        &kp B     &kp N          &kp M        &lt 5 COMMA  &kp PERIOD       &mt RIGHT_SHIFT SLASH  &trans
+        &lt 6 ESCAPE        &trans          &trans              &lt 3 SPACE  &mkp MB1  &kp BACKSPACE  &lt 3 ENTER  &trans       &trans           &trans
             >;
         };
 
@@ -98,7 +98,7 @@
         NUM {
             bindings = <
 &trans  &kp N1            &kp N2             &kp N3          &kp N4           &kp N5         &kp N6  &kp N7        &kp N8        &kp N9        &kp N0      &trans
-&trans  &trans            &trans             &trans          &trans           &kp BACKSLASH  &trans  &kp N4        &kp N5        &kp N6        &kp MINUS   &kp SLASH
+&trans  &trans            &trans             &kp HASH        &trans           &kp BACKSLASH  &trans  &kp N4        &kp N5        &kp N6        &kp MINUS   &kp SLASH
 &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE       &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS    &kp ASTERISK
         &trans            &trans             &trans          &trans           &trans         &trans  &kp NUMBER_0  &trans        &trans        &kp PERIOD
             >;
