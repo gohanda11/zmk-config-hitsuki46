@@ -84,7 +84,7 @@
         y-input-code = <1>;  // INPUT_REL_Y
 
         // CPI setting (200-3200, step 200, default 600)
-        cpi = <650>;
+        cpi = <550>;
 
         // 180 degree orientation (invert both X and Y)
         invert-x;
